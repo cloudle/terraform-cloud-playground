@@ -11,9 +11,15 @@ terraform {
   }
 }
 
-# An example resource that does nothing.
-resource "null_resource" "example" {
-  triggers = {
-    value = "A example resource that does nothing!"
+provider "aws" {
+  region = var.region
+}
+
+resource "aws_s3_bucket" "app" {
+  bucket = "terraform-cloud-playground"
+
+  website {
+    index_document = "index.html"
+    error_document = "error.html"
   }
 }
