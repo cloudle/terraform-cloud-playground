@@ -1,19 +1,19 @@
 variable "systemName" {
-  default = "prosper"
+  default     = "prosper"
   description = "uqniue Name of the system"
 }
 
 variable "region" {
-  default = "us-east-1"
+  default     = "us-east-1"
   description = "server's region - default is N. Virginia"
 }
 
 variable "environment" {
-  default = "dev"
+  default     = "dev"
   description = "environment tag for different kind of purpose"
 }
 
 variable "snsExternalId" {
-  default = "snsExternal"
+  default     = "snsExternal"
   description = "ExternalId for sns policy"
 }
