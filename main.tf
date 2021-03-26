@@ -1,12 +1,21 @@
-# The configuration for the `remote` backend.
 terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "3.26.0"
+    }
+    random = {
+      source  = "hashicorp/random"
+      version = "3.0.1"
+    }
+  }
+  required_version = "~> 0.14"
+
   backend "remote" {
-    # The name of your Terraform Cloud organization.
     organization = "ProsperCI"
 
-    # The name of the Terraform Cloud workspace to store Terraform state files in.
     workspaces {
-      name = "terraform-cloud-playground"
+      name = "AppServices"
     }
   }
 }
