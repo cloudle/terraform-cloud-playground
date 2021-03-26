@@ -25,7 +25,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "app" {
-  bucket = "terraform-cloud-playground"
+  bucket = "terraform-cloud-playground-renamed"
 
   website {
     index_document = "index.html"
