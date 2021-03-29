@@ -4,12 +4,12 @@ data "aws_iam_policy_document" "sns-assume-role" {
 
     principals {
       identifiers = ["cognito-idp.amazonaws.com"]
-      type = "Service"
+      type        = "Service"
     }
 
     condition {
-      test = "StringEquals"
-      values = [var.snsExternalId]
+      test     = "StringEquals"
+      values   = [var.snsExternalId]
       variable = "sts:ExternalId"
     }
   }
@@ -20,19 +20,19 @@ data "aws_iam_policy_document" "identity-pool-assume-role" {
     actions = ["sts:AssumeRoleWithWebIdentity"]
 
     principals {
-      type = "Federated"
+      type        = "Federated"
       identifiers = ["cognito-identity.amazonaws.com"]
     }
 
     condition {
-      test = "StringEquals"
-      values = [aws_cognito_identity_pool.main.id]
+      test     = "StringEquals"
+      values   = [aws_cognito_identity_pool.main.id]
       variable = "cognito-identity.amazonaws.com:aud"
     }
 
     condition {
-      test = "ForAnyValue:StringLike"
-      values = ["authenticated"]
+      test     = "ForAnyValue:StringLike"
+      values   = ["authenticated"]
       variable = "cognito-identity.amazonaws.com:amr"
     }
   }
