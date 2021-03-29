@@ -15,7 +15,7 @@ terraform {
     organization = "ProsperCI"
 
     workspaces {
-      name = "AppServices"
+      name = "CloudPlayground"
     }
   }
 }
@@ -25,7 +25,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "app" {
-  bucket = "terraform-cloud-playground-real-renamed"
+  bucket = "terraform-cloud-playground"
 
   website {
     index_document = "index.html"
