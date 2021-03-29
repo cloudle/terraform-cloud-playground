@@ -1,6 +1,6 @@
 variable "systemName" {
-  default     = "prosper"
-  description = "uqniue Name of the system"
+  default     = "playground"
+  description = "unique Name of the system"
 }
 
 variable "region" {
